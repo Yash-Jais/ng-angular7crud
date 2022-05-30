@@ -1,0 +1,22 @@
+h1{
+  font-size: calc(1.075rem + 1.3vw);
+  color: #b82029!important;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+p{
+  letter-spacing: calc(0.01vw + 0.1vw);
+}
+.sidebar{
+  color: #fff!important;
+}
+.links{
+  color: #f27921;
+}
+.links:hover{
+  background-color: #b82029;
+  color: #fff!important;
+}
+.colorChange{
+  color: #f27921!important;
+}

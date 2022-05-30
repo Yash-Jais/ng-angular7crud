@@ -1,0 +1,39 @@
+<h2 class="display-6">Employee Registration</h2>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  <div class=" mb-3">
+    <label class="mb-2" for="Fullname">Fullname</label>
+    <input class="form-control" type="text" id="Fullname" name="fullname" placeholder="Enter Fullname"
+      #fullname="ngModel" [(ngModel)]="service.formData.fullname" required>
+    <div *ngIf="fullname.touched && fullname.invalid" class="error-message">This is field is required</div>
+  </div>
+
+  <div class="mb-3">
+    <label class="mb-2" for="Position">Position</label>
+    <input class="form-control" type="text" id="Position" name="position" placeholder="Enter Position"
+      #position="ngModel" [(ngModel)]="service.formData.position" required>
+    <div *ngIf="position.touched && position.invalid" class="error-message">This is field is required</div>
+
+  </div>
+
+  <div class="mb-3">
+    <label class="mb-2" for="EmpCode">EmpCode</label>
+    <input class="form-control" type="text" id="EmpCode" name="empcode" placeholder="Enter empcode" #empCode="ngModel"
+      [(ngModel)]="service.formData.empcode" required>
+    <div *ngIf="empCode.touched && empCode.invalid" class="error-message">This is field is required</div>
+
+  </div>
+
+  <div class="mb-3">
+    <label class="mb-2" for="Mobile">Mobile</label>
+    <input class="form-control" type="number" id="Mobile" name="mobile" placeholder="Enter Mobile" #mobile="ngModel"
+      [(ngModel)]="service.formData.mobile" required>
+    <div *ngIf="mobile.touched && mobile.invalid" class="error-message">This is field is required</div>
+
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-lg" [disabled]="form.invalid">SUBMIT</button>
+  </div>
+
+</form>

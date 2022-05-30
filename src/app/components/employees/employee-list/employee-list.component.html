@@ -1,0 +1,25 @@
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Employee Code</th>
+      <th>Mobile</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of list, index as i">
+      <td>{{ i+1 }}</td>
+      <td>{{ emp.fullname }}</td>
+      <td>{{ emp.position }}</td>
+      <td>{{ emp.empcode }}</td>
+      <td>{{ emp.mobile }}</td>
+      <td>
+        <button class="btn btn-success" (click)="onEdit(emp)"> Edit</button>
+        <button class="btn btn-danger ms-2" (click)="onDelete(emp.id)"> Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

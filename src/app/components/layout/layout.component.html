@@ -1,0 +1,132 @@
+<div class="container-fluid">
+  <div class="row vh-100 sidebar">
+    <aside class="col-xxl-2 col-lg-3 bg-dark py-2">
+      <div class="heading d-flex">
+        <div class="logo">
+          <img src="../../../assets/logos/logo.png" alt="Logo" class="w-100" />
+        </div>
+        <h1 class="text-white ms-2 mb-0">
+          Seva<span class="colorChange">deep</span>
+        </h1>
+      </div>
+      <p class="text-white mb-0">Manage Donors to Donate</p>
+      <hr class="bg-white" />
+      <span class="text-muted text-uppercase fw-bold">Configurations</span>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a
+            href="#settings"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="settings"
+            class="nav-link text-white d-flex align-items-center justify-content-between"
+          >
+            Settings
+            <i class="fas fa-caret-down text-white"></i>
+          </a>
+          <div class="collapse" id="settings">
+            <div class="card card-body py-0 bg-transparent border-0">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link links"
+                    routerLink=""
+                    (click)="setValue('state')"
+                    >State</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link links"
+                    routerLink=""
+                    (click)="setValue('city')"
+                    >City</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link links"
+                    routerLink=""
+                    (click)="setValue('city-area')"
+                    >City-Area</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link links"
+                    routerLink=""
+                    (click)="setValue('employee')"
+                    >Employees</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            href="#ngoSetting"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="ngoSetting"
+            class="nav-link text-white d-flex align-items-center justify-content-between"
+          >
+            NGO Setting
+            <i class="fas fa-caret-down text-white"></i>
+          </a>
+          <div class="collapse" id="ngoSetting">
+            <div class="card card-body py-0 bg-transparent border-0">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link links" routerLink="">NGO Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links" routerLink="">NGO Registration</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links" routerLink="">NGO Needs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links" routerLink="">NGO Feedback</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link links" routerLink="">NGO Followers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <main class="col-xxl-10 col-lg-9 bg-light p-0">
+      <app-navbar></app-navbar>
+      <div class="heading d-flex justify-content-between">
+        <h1 class="fw-bold">{{ title }}</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              {{ title }}
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div [ngSwitch]="title">
+        <div class="container text-dark" *ngSwitchCase="'state'">
+          <app-state></app-state>
+        </div>
+        <div class="container text-dark" *ngSwitchCase="'city'">
+          <!-- <app-city></app-city> -->
+        </div>
+        <div class="container text-dark" *ngSwitchCase="'city-area'">
+          <!-- <app-city-area></app-city-area> -->
+        </div>
+        <div class="container text-dark" *ngSwitchCase="'employee'">
+          <app-employee></app-employee>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

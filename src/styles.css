@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+*{font-family: Roboto;}
+input.ng-touched.ng-invalid{
+  border-color: #f00;
+}
+.error-message{color: #f00;}

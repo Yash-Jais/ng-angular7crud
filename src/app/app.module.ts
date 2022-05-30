@@ -3,16 +3,43 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { EmployeeService } from './shared/employee.service';
+import { FormsModule } from '@angular/forms';
+import { EmployeesComponent } from './components/employees/employees.component';
+import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
+import { EmployeeComponent } from './components/employees/employee/employee.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { StateComponent } from './components/state/state.component';
+// import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeesComponent,
+    EmployeeComponent,
+    EmployeeListComponent,
+    LayoutComponent,
+    NavbarComponent,
+    StateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    FormsModule,
+
+
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
