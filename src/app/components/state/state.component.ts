@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { State } from 'src/app/shared/state.model';
 
 @Component({
   selector: 'app-state',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./state.component.css']
 })
 export class StateComponent implements OnInit {
+ 
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }

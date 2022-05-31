@@ -25,13 +25,17 @@
             Settings
             <i class="fas fa-caret-down text-white"></i>
           </a>
-          <div class="collapse" id="settings">
+          <div
+            class="collapse"
+            [ngClass]="{ show: sideBarSetting }"
+            id="settings"
+          >
             <div class="card card-body py-0 bg-transparent border-0">
               <ul class="nav flex-column">
                 <li class="nav-item">
                   <a
                     class="nav-link links"
-                    routerLink=""
+                    [ngClass]="{ active: title == 'state' }"
                     (click)="setValue('state')"
                     >State</a
                   >
@@ -39,7 +43,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link links"
-                    routerLink=""
+                    [ngClass]="{ active: title == 'city' }"
                     (click)="setValue('city')"
                     >City</a
                   >
@@ -47,7 +51,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link links"
-                    routerLink=""
+                    [ngClass]="{ active: title == 'city-area' }"
                     (click)="setValue('city-area')"
                     >City-Area</a
                   >
@@ -55,7 +59,7 @@
                 <li class="nav-item">
                   <a
                     class="nav-link links"
-                    routerLink=""
+                    [ngClass]="{ active: title == 'employee' }"
                     (click)="setValue('employee')"
                     >Employees</a
                   >
@@ -80,19 +84,44 @@
             <div class="card card-body py-0 bg-transparent border-0">
               <ul class="nav flex-column">
                 <li class="nav-item">
-                  <a class="nav-link links" routerLink="">NGO Categories</a>
+                  <a
+                    class="nav-link links"
+                    [ngClass]="{ active: title == 'ngo-Categories' }"
+                    (click)="setValue('ngo-Categories')"
+                    >NGO Categories</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link links" routerLink="">NGO Registration</a>
+                  <a
+                    class="nav-link links"
+                    (click)="setValue('ngo-Registeration')"
+                    [ngClass]="{ active: title == 'ngo-Registeration' }"
+                    >NGO Registration</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link links" routerLink="">NGO Needs</a>
+                  <a
+                    class="nav-link links"
+                    [ngClass]="{ active: title == 'employee' }"
+                    (click)="setValue('ngo-Needs')"
+                    >NGO Needs</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link links" routerLink="">NGO Feedback</a>
+                  <a
+                    class="nav-link links"
+                    [ngClass]="{ active: title == 'employee' }"
+                    (click)="setValue('ngo-Feedback')"
+                    >NGO Feedback</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link links" routerLink="">NGO Followers</a>
+                  <a
+                    class="nav-link links"
+                    [ngClass]="{ active: title == 'ngo-Followers' }"
+                    (click)="setValue('ngo-Followers')"
+                    >NGO Followers</a
+                  >
                 </li>
               </ul>
             </div>
@@ -103,9 +132,9 @@
     <main class="col-xxl-10 col-lg-9 bg-light p-0">
       <app-navbar></app-navbar>
       <div class="heading d-flex justify-content-between">
-        <h1 class="fw-bold">{{ title }}</h1>
+        <h1 class="fw-bold ps-3">{{ title }}</h1>
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
+          <ol class="breadcrumb pe-3">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">
               {{ title }}

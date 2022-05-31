@@ -1,20 +1,29 @@
+/* Angular Modules */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { RouterModule } from '@angular/router';
+
+/* firebase */
 import { environment } from 'src/environments/environment';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { EmployeeService } from './shared/employee.service';
-import { FormsModule } from '@angular/forms';
+/* Components */
+import { AppComponent } from './app.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
 import { EmployeeComponent } from './components/employees/employee/employee.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StateComponent } from './components/state/state.component';
+import { StateCreateComponent } from './components/state/state-create/state-create.component';
+import { StateViewComponent } from './components/state/state-view/state-view.component';
+
+/* Services */
+import { EmployeeService } from './shared/employee.service';
+import { StateService } from './shared/state.service';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
@@ -28,7 +37,9 @@ import { StateComponent } from './components/state/state.component';
     EmployeeListComponent,
     LayoutComponent,
     NavbarComponent,
-    StateComponent
+    StateComponent,
+    StateCreateComponent,
+    StateViewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,10 +47,9 @@ import { StateComponent } from './components/state/state.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
-
-
+    RouterModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

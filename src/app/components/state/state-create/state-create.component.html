@@ -1,0 +1,26 @@
+<div class="card shadow">
+  <div class="card-body">
+    <div class="mb-3">
+      <label for="StateName" class="mb-2"
+        >Enter State Name
+        <span class="valid" *ngIf="!state.name">*</span></label
+      >
+      <input
+        type="text"
+        [(ngModel)]="state.name"
+        placeholder="Enter State"
+        class="form-control"
+        minlength="1"
+        maxlength="50"
+        (input)="checkName($event.target.value)"
+        id="StateName"
+      />
+      <div *ngIf="submitted && !error.title" class="valid">
+        This field is Required
+      </div>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary" (click)="createState()">Submit</button>
+    </div>
+  </div>
+</div>
