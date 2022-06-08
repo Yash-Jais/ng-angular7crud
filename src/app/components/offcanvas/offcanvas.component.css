@@ -1,0 +1,25 @@
+
+.sidebar-nav{
+  width: 270px;
+}
+.right-icon{
+  transition: transform 0.3s ease-in;
+}
+.setting[aria-expanded="true"] .right-icon{
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 992px) {
+  body{
+    overflow: auto;
+  }
+  .offcanvas-backdrop::before{
+   display: none;
+  }
+  .sidebar-nav{
+    transform: none;
+    visibility: visible!important;
+    top: 103px;
+    height: calc(100% - 103px);
+  }
+}

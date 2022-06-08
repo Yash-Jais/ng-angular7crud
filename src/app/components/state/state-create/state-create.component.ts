@@ -15,7 +15,7 @@ export class StateCreateComponent implements OnInit {
   error = {
     title: false,
   }
-  constructor(private StateService: StateService, private router: Router) { }
+  constructor(private StateService: StateService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.resetForm(this.state);
@@ -50,7 +50,7 @@ export class StateCreateComponent implements OnInit {
       this.state.createDateTime = new Date(Date.now());
       this.StateService.createState(this.state).then(res => {
         this.resetForm(this.state);
-        this.router.navigate(['./state-view']);
+        this.router.navigate(['state-view']);
       }).catch(err => {
         console.log(err);
       }

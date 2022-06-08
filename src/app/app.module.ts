@@ -15,11 +15,12 @@ import { AppComponent } from './app.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
 import { EmployeeComponent } from './components/employees/employee/employee.component';
-import { LayoutComponent } from './components/layout/layout.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StateComponent } from './components/state/state.component';
 import { StateCreateComponent } from './components/state/state-create/state-create.component';
 import { StateViewComponent } from './components/state/state-view/state-view.component';
+import { OffcanvasComponent } from './components/offcanvas/offcanvas.component';
+import { DasahboardComponent } from './components/dasahboard/dasahboard.component';
 
 /* Services */
 import { EmployeeService } from './shared/employee.service';
@@ -35,11 +36,12 @@ import { StateService } from './shared/state.service';
     EmployeesComponent,
     EmployeeComponent,
     EmployeeListComponent,
-    LayoutComponent,
     NavbarComponent,
     StateComponent,
     StateCreateComponent,
-    StateViewComponent
+    StateViewComponent,
+    OffcanvasComponent,
+    DasahboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { StateService } from './shared/state.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [EmployeeService, StateService],
   bootstrap: [AppComponent]

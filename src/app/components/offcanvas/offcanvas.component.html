@@ -1,0 +1,115 @@
+<div
+  class="offcanvas offcanvas-start sidebar-nav bg-dark"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark text-white">
+      <ul class="navbar-nav">
+        <li>
+          <div class="text-muted small fw-bold text-uppercase px-3">Core</div>
+        </li>
+        <li>
+          <a
+            routerLink="dashboard"
+            class="nav-link px-3"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+          >
+            <span class="me-2">
+              <i class="fas fa-tachometer-alt text-white"></i>
+            </span>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li>
+          <div class="text-muted small fw-bold text-uppercase px-3">
+            Interface
+          </div>
+        </li>
+        <li>
+          <a
+            class="nav-link px-3 d-flex align-items-center setting"
+            data-bs-toggle="collapse"
+            href="#settings"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <span class="me-2">
+              <i class="fas fa-cog"></i>
+            </span>
+            Settings
+            <span class="right-icon d-inline-flex ms-auto">
+              <i class="fas fa-angle-down"></i>
+            </span>
+          </a>
+          <div class="collapse" id="settings">
+            <div
+              class="card card-body bg-transparent border-0 rounded-0 py-0 px-4"
+            >
+              <ul class="navbar-nav">
+                <li>
+                  <a
+                    routerLink="employees/create-employee"
+                    class="nav-link"
+                    routerLinkActive="active"
+                    ariaCurrentWhenActive="page"
+                  >
+                    <span class="me-2">
+                      <i class="fas fa-dot-circle text-warning"></i>
+                    </span>
+                    Employees
+                  </a>
+                </li>
+                <li>
+                  <a
+                    routerLink="states"
+                    class="nav-link"
+                    routerLinkActive="active"
+                    ariaCurrentWhenActive="page"
+                  >
+                    <span class="me-2">
+                      <i class="fas fa-dot-circle text-warning"></i>
+                    </span>
+                    States
+                  </a>
+                </li>
+                <li>
+                  <a
+                    routerLink="city"
+                    class="nav-link"
+                    routerLinkActive="active"
+                    ariaCurrentWhenActive="page"
+                  >
+                    <span class="me-2">
+                      <i class="fas fa-dot-circle text-warning"></i>
+                    </span>
+                    City
+                  </a>
+                </li>
+                <li>
+                  <a
+                    routerLink="category"
+                    class="nav-link"
+                    routerLinkActive="active"
+                    ariaCurrentWhenActive="page"
+                  >
+                    <span class="me-2">
+                      <i class="fas fa-dot-circle text-warning"></i>
+                    </span>
+                    Category
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

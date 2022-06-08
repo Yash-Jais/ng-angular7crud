@@ -1,16 +1,68 @@
-<nav class="navbar navbar-dark bg-dark py-4">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1"
-      ><i class="fa fa-bars text-white"></i
-    ></span>
-    <form class="d-flex">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <button
+      class="btn btn-primary me-3 d-block d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample"
+    >
+      <i class="fa fa-bars"></i>
+    </button>
+    <a href="" class="navbar-brand text-uppercase fw-bold me-auto me-lg-0">
+      <img src="../../../assets/logos/ngo_icon.png" alt="Logo" class="w-25" />
+      <span class="seva">Seva</span>deep
+      <p class="mb-0">Connecting Donors With NGOs</p>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex ms-auto mt-3">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control border-0"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="basic-addon2"
+          />
+          <span class="input-group-text border-0 bg-primary" id="basic-addon2">
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </span>
+        </div>
+      </form>
+      <ul class="navbar-nav ms-3 rounded-circle border-secondary border">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user"></i>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdown"
+          >
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
