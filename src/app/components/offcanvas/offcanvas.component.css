@@ -23,3 +23,18 @@
     height: calc(100% - 103px);
   }
 }
+
+/* Define Width */
+.offcanvas-body::-webkit-scrollbar{
+  width: 10px;
+}
+.offcanvas-body::-webkit-scrollbar-track{
+  background-color: #4b4b4b;
+}
+.offcanvas-body::-webkit-scrollbar-thumb{
+  background-color: #ffc107;
+  border-radius: 50px;
+}
+.offcanvas-body::-webkit-scrollbar-thumb:hover{
+  background-color: #dcac1a;
+}

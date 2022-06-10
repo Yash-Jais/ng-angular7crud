@@ -1,7 +1,9 @@
 export class Employee {
-  id: string;
-  fullname: string;
-  empcode: string;
-  position: string;
-  mobile: string;
+  id?: string;
+  fullname?: string;
+  empcode?: string;
+  position?: string;
+  mobile?: string;
+  createDateTime?: any;
+  updateDateTime?: any;
 }

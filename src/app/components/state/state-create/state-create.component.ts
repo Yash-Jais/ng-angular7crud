@@ -30,6 +30,26 @@ export class StateCreateComponent implements OnInit {
     }
   }
 
+  createState() {
+    this.submitted = true;
+    if (this.validate()) {
+      this.state.createDateTime = new Date(Date.now());
+      this.state.updateDateTime = new Date(Date.now());
+      this.StateService.createState(this.state).then(res => {
+        this.resetForm(this.state);
+        this.router.navigate(['state-view']);
+      }).catch(err => {
+        console.log(err);
+      }
+      );
+    }
+  }
+
+
+  /**************************
+   * VALIDATION PART
+   **************************/
+
   checkName(state: any) {
     const namePattern = /^[0-9]+$/;
     //  /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
@@ -44,19 +64,6 @@ export class StateCreateComponent implements OnInit {
     }
   }
 
-  createState() {
-    this.submitted = true;
-    if (this.validate()) {
-      this.state.createDateTime = new Date(Date.now());
-      this.StateService.createState(this.state).then(res => {
-        this.resetForm(this.state);
-        this.router.navigate(['state-view']);
-      }).catch(err => {
-        console.log(err);
-      }
-      );
-    }
-  }
 
 
 

@@ -9,15 +9,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of listState; index as i">
+        <tr
+          *ngFor="
+            let item of listState
+              | paginate: { itemsPerPage: 10, currentPage: page };
+            index as i
+          "
+        >
           <td>{{ i + 1 }}</td>
           <td>{{ item.name }}</td>
           <td>
-            <button class="btn btn-success">Edit</button>
+            <button class="btn btn-success" (click)="editState(item)">
+              Edit
+            </button>
             <button class="btn btn-danger ms-2">Delete</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-center my-3">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
   </div>
 </div>

@@ -1,0 +1,24 @@
+table th, table td  {
+  width: auto !important;
+  white-space: nowrap;
+}
+/* width */
+.table-responsive::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track */
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.table-responsive::-webkit-scrollbar-thumb {
+  background: #9f0e1d;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #690a14;
+}

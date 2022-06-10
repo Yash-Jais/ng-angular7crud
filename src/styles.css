@@ -5,3 +5,28 @@ input.ng-touched.ng-invalid{
   border-color: #f00;
 }
 .error-message{color: #f00;}
+/* width */
+body::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-top: 103px!important;
+  top: 103px;
+  position: relative;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #9f0e1d;
+  border-radius: 50px;
+
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #690a14;
+}

@@ -1,5 +1,6 @@
 /* Angular Modules */
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from "ngx-pagination";
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +10,7 @@ import { RouterModule } from '@angular/router';
 
 /* firebase */
 import { environment } from 'src/environments/environment';
+// import { ToastrModule } from 'ngx-toastr';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -21,10 +23,12 @@ import { StateCreateComponent } from './components/state/state-create/state-crea
 import { StateViewComponent } from './components/state/state-view/state-view.component';
 import { OffcanvasComponent } from './components/offcanvas/offcanvas.component';
 import { DasahboardComponent } from './components/dasahboard/dasahboard.component';
+import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
 
 /* Services */
 import { EmployeeService } from './shared/employee.service';
 import { StateService } from './shared/state.service';
+import { StateEditComponent } from './components/state/state-edit/state-edit.component';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
@@ -42,14 +46,18 @@ import { StateService } from './shared/state.service';
     StateViewComponent,
     OffcanvasComponent,
     DasahboardComponent,
+    EmployeeEditComponent,
+    StateEditComponent,
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     FormsModule,
     RouterModule,
+    // ToastrModule.forRoot()
   ],
   providers: [EmployeeService, StateService],
   bootstrap: [AppComponent]

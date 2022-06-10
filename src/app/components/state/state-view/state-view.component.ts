@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { State } from 'src/app/shared/state.model';
 import { StateService } from 'src/app/shared/state.service';
 
@@ -9,10 +10,10 @@ import { StateService } from 'src/app/shared/state.service';
   styleUrls: ['./state-view.component.css']
 })
 export class StateViewComponent implements OnInit {
+  page = 1;//pagination
+  listState: State[]; //State Data
 
-  listState: State[];
-
-  constructor(private stateService: StateService) { }
+  constructor(private stateService: StateService, private router: Router) { }
 
   ngOnInit() {
     this.getState();
@@ -21,12 +22,13 @@ export class StateViewComponent implements OnInit {
   getState() {
     this.stateService.getStats()
       .subscribe(listArray => {
-        this.listState = listArray.map(items => {
-          return {
-            ...items.payload.doc.data() as State
-          }
-        })
+        this.listState = listArray;
       });
+  }
 
+  editState(state) {
+    let stateId = state.id;
+    //console.log(stateId);
+    this.router.navigate(['states/edit-state'], { queryParams: { stateId: stateId } })
   }
 }

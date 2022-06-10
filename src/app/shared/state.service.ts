@@ -9,13 +9,14 @@ export class StateService {
 
   constructor(private firestore: AngularFirestore) { }
 
+
+  /* Method used to create State */
   async createState(state) {
-    let data = JSON.parse(JSON.stringify(state)); //Object 
-    data["createDateTime"] = new Date(Date.now());
-    data["updateDateTime"] = new Date(Date.now());
-    let stateTransaction = await this.firestore.collection('states').add(data)
+
+    let stateTransaction = await this.firestore.collection('states').add(state)
     let transactionId = stateTransaction.id;
 
+    /** this is for updating the id in the same Document */
     await this.firestore
       .collection('states')
       .doc(transactionId)
@@ -24,8 +25,10 @@ export class StateService {
     return { transactionId };
   }
 
+  /* Method used to display all States */
   getStats() {
-    return this.firestore.collection('states', ref => ref.orderBy("createDateTime", "desc")).snapshotChanges();
+    return this.firestore.collection('states', ref => ref.orderBy("createDateTime", "desc")).valueChanges();
   }
+
 
 }
