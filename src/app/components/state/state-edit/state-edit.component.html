@@ -1,3 +1,55 @@
-<p>
-  state-edit works!
-</p>
+<div class="row">
+  <div class="fw-bold fs-3 mt-3 col-12 d-flex justify-content-between">
+    Edit State
+    <a routerLink="/states/view-state" class="btn btn-primary rounded-pill">
+      <span class="me2">
+        <i class="fas fa-eye"></i>
+      </span>
+      Back to List
+    </a>
+  </div>
+  <div class="col-sm-8 mx-auto my-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <form>
+          <input
+            type="hidden"
+            name="id"
+            [(ngModel)]="state.id"
+            class="form-control"
+            autocomplete="off"
+            *ngIf="state.id"
+          />
+          <div class="mb-3">
+            <label for="StateName" class="mb-2">
+              <span *ngIf="state.name">Edit State Name</span>
+              <span *ngIf="!state.name">Enter State Name</span>
+              <span class="valid" *ngIf="!state.name">*</span></label
+            >
+
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="state.name"
+              placeholder="Enter State"
+              class="form-control"
+              minlength="1"
+              maxlength="50"
+              (input)="checkName($event.target.value)"
+              id="StateName"
+              autocomplete="off"
+            />
+            <div *ngIf="submitted && !error.title" class="valid">
+              This field is Required
+            </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" (click)="updateState()">
+              Update
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

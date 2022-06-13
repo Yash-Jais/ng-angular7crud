@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CityCreateComponent } from './components/city/city-create/city-create.component';
+import { CityEditComponent } from './components/city/city-edit/city-edit.component';
+import { CityListComponent } from './components/city/city-list/city-list.component';
+import { CityComponent } from './components/city/city.component';
 import { DasahboardComponent } from './components/dasahboard/dasahboard.component';
 import { EmployeeEditComponent } from './components/employees/employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './components/employees/employee-list/employee-list.component';
@@ -32,7 +36,15 @@ const routes: Routes = [
       { path: "edit-state", component: StateEditComponent },
     ]
   },
-
+  {
+    path: "cities",
+    component: CityComponent,
+    children: [
+      { path: "create-city", component: CityCreateComponent },
+      { path: "list-city", component: CityListComponent },
+      { path: "edit-city", component: CityEditComponent },
+    ]
+  },
 ];
 
 @NgModule({

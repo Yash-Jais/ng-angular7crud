@@ -15,13 +15,5 @@ export class StateComponent implements OnInit {
   ngOnInit() {
   }
 
-  exist() {
-    if (window.open("http://192.168.20.57:4200/states/create-state")) {
-      console.log(true);
-
-    }
-
-  }
-
 }
 

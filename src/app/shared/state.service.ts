@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-// import { State } from './state.model';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,31 @@ export class StateService {
   }
 
   /* Method used to display all States */
-  getStats() {
+  getStats(): Observable<any> {
     return this.firestore.collection('states', ref => ref.orderBy("createDateTime", "desc")).valueChanges();
   }
 
+  /* Method used to display Particular state */
+  getStateDetail(stateId: any): Observable<any> {
+    return this.firestore.collection('states', ref => ref.where("id", "==", stateId)).valueChanges();
+  }
+
+  /* Method used to Update State */
+  updateState(stateId, stateData): Observable<any> {
+    return new Observable((observer) => {
+      this.firestore.collection('states').doc(stateId).update(stateData)
+        .then((res) => {
+          observer.next({
+            key: res
+          })
+        })
+        .catch((err) => {
+          observer.next({
+            key: err
+          })
+        })
+    })
+  }
+  /* End Update */
 
 }

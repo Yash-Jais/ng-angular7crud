@@ -29,6 +29,11 @@ import { EmployeeEditComponent } from './components/employees/employee-edit/empl
 import { EmployeeService } from './shared/employee.service';
 import { StateService } from './shared/state.service';
 import { StateEditComponent } from './components/state/state-edit/state-edit.component';
+import { CityComponent } from './components/city/city.component';
+import { CityCreateComponent } from './components/city/city-create/city-create.component';
+import { CityEditComponent } from './components/city/city-edit/city-edit.component';
+import { CityListComponent } from './components/city/city-list/city-list.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
@@ -48,6 +53,10 @@ import { StateEditComponent } from './components/state/state-edit/state-edit.com
     DasahboardComponent,
     EmployeeEditComponent,
     StateEditComponent,
+    CityComponent,
+    CityCreateComponent,
+    CityEditComponent,
+    CityListComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +66,7 @@ import { StateEditComponent } from './components/state/state-edit/state-edit.com
     AngularFirestoreModule,
     FormsModule,
     RouterModule,
+    NgMultiSelectDropDownModule.forRoot()
     // ToastrModule.forRoot()
   ],
   providers: [EmployeeService, StateService],

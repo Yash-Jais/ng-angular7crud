@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { pipe } from 'rxjs';
+
 import { Employee } from 'src/app/shared/employee.model';
 import { EmployeeService } from 'src/app/shared/employee.service';
 

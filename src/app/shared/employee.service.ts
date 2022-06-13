@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { removeData } from 'jquery';
+
 import { Observable } from 'rxjs';
 import { Employee } from './employee.model';
 
