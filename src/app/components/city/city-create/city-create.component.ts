@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Address } from 'src/app/shared/address.model';
-import { AddressService } from 'src/app/shared/address.service';
+import { Router } from '@angular/router';
+
+import { City } from 'src/app/shared/city.model';
+import { CityService } from 'src/app/shared/city.service';
 
 
 @Component({
@@ -9,13 +11,13 @@ import { AddressService } from 'src/app/shared/address.service';
   styleUrls: ['./city-create.component.css']
 })
 export class CityCreateComponent implements OnInit {
-  city = new Address;
+  city = new City; //to store data of city 
 
   states = []; //This property shows dropdown list
   selectedStates = []; //Push selected state data into this property
   dropdownSettingsStates = {};//This property handles the dropdown
 
-  constructor(private addressService: AddressService) { }
+  constructor(private cityService: CityService, private router: Router) { }
 
   ngOnInit() {
     this.dropdownSettingsStates = {
@@ -24,23 +26,46 @@ export class CityCreateComponent implements OnInit {
       textField: 'name',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 1,
+      itemsShowLimit: 3,
       allowSearchFilter: true,
+      closeDropDownOnSelection: true
     };
     this.getStates();
+    this.resetForm(this.city);
   }
 
-
+  resetForm(city: City) {
+    if (city != null) {
+      this.selectedStates = [];
+      city.createDateTime = '';
+      city.updateDateTime = '';
+      city.id = '';
+      city.name = '';
+      city.stateId = '';
+      city.stateName = '';
+    }
+  }
+  /* List all states */
   getStates() {
-    this.addressService.getStateList().subscribe((states) => {
+    this.cityService.getStateList().subscribe((states) => {
       this.states = states;
     });
   }
-  onItemSelect(item) {
-    console.log(item);
 
-  }
-  onSelectAll(items: any) {
-    console.table(items);
+  createCity() {
+    if (this.selectedStates[0]) { /* If state will not selected error occurs */
+      this.city.stateId = this.selectedStates[0]['id'];
+      this.city.stateName = this.selectedStates[0]['name'];
+      this.city.isActive = false;
+      this.city.createDateTime = new Date(Date.now());
+      this.city.updateDateTime = new Date(Date.now());
+      //console.log("City data", this.city);
+      this.cityService.createCity(this.city);
+      this.resetForm(this.city);
+    }
+    else {
+      console.log("Problem generate");
+    }
+
   }
 }

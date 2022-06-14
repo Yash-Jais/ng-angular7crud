@@ -21,24 +21,23 @@
               [settings]="dropdownSettingsStates"
               [data]="states"
               [(ngModel)]="selectedStates"
-              (onSelect)="onItemSelect($event)"
-              (onSelectAll)="onSelectAll($event)"
             >
             </ng-multiselect-dropdown>
           </div>
         </div>
         <div class="mb-3">
-          <label for="StateName" class="mb-2"
+          <label for="CityName" class="mb-2"
             >Enter City Name <span class="valid">*</span></label
           >
 
           <input
             type="text"
-            placeholder="Enter State"
+            [(ngModel)]="city.name"
+            placeholder="Enter City"
             class="form-control"
             minlength="1"
             maxlength="50"
-            id="StateName"
+            id="CityName"
             autocomplete="off"
           />
           <!-- <div *ngIf="submitted && !error.title" class="valid">
@@ -46,7 +45,7 @@
           </div> -->
         </div>
         <div class="mb-3">
-          <!-- <button class="btn btn-primary" (click)="createCity()">Submit</button> -->
+          <button class="btn btn-primary" (click)="createCity()">Submit</button>
         </div>
       </div>
     </div>

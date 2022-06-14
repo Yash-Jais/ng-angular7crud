@@ -7,7 +7,7 @@
       <div class="card text-white bg-dark h-100">
         <div class="card-header">Employees</div>
         <div class="card-body">
-          <h5 class="card-title fw-bold fs-3">#25</h5>
+          <h5 class="card-title fw-bold fs-3">{{ totalEmployees }}</h5>
           <p class="card-text">
             To see more about <u>employees</u> <br />
             <button
@@ -24,10 +24,13 @@
       <div class="card text-white bg-dark h-100">
         <div class="card-header">States</div>
         <div class="card-body">
-          <h5 class="card-title fw-bold fs-3">#25</h5>
+          <h5 class="card-title fw-bold fs-3">{{ totalStates }}</h5>
           <p class="card-text">
             To see more about <u>states</u> <br />
-            <button class="btn btn-link px-0 text-warning">
+            <button
+              class="btn btn-link px-0 text-warning"
+              (click)="goToState()"
+            >
               Click Here..!
             </button>
           </p>
@@ -38,10 +41,24 @@
       <div class="card text-white bg-dark h-100">
         <div class="card-header">Cities</div>
         <div class="card-body">
-          <h5 class="card-title fw-bold fs-3">#25</h5>
+          <h5 class="card-title fw-bold fs-3">{{ totalCities }}</h5>
           <p class="card-text">
             To see more about <u>cities</u> <br />
-            <button class="btn btn-link px-0 text-warning">
+            <button class="btn btn-link px-0 text-warning" (click)="goToCity()">
+              Click Here..!
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-xl-3 my-3">
+      <div class="card text-white bg-dark h-100">
+        <div class="card-header">Areas</div>
+        <div class="card-body">
+          <h5 class="card-title fw-bold fs-3">{{ totalAreas }}</h5>
+          <p class="card-text">
+            To see more about <u>areas</u> <br />
+            <button class="btn btn-link px-0 text-warning" (click)="goToArea()">
               Click Here..!
             </button>
           </p>
@@ -52,7 +69,7 @@
       <div class="card text-white bg-dark h-100">
         <div class="card-header">Category</div>
         <div class="card-body">
-          <h5 class="card-title fw-bold fs-3">#25</h5>
+          <h5 class="card-title fw-bold fs-3">{{ totalCategories }}</h5>
           <p class="card-text">
             To see more about <u>categories</u> <br />
             <button class="btn btn-link px-0 text-warning">
