@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="fw-bold fs-3 mt-3 col-12 d-flex justify-content-between">
+    Upload Images
+    <a routerLink="/gallary/list-images" class="btn btn-primary rounded-pill">
+      <span class="me2">
+        <i class="fas fa-eye"></i>
+      </span>
+      Gallery
+    </a>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-8 mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div
+          class="imageCircle mx-auto border border-dark d-flex justify-content-center align-content-center mb-3"
+          onclick="document.getElementById('fileInputImage').click()"
+        >
+          <img
+            src="../../../../assets/img/placeholder-image.png"
+            alt="image"
+            class="w-100 overflow-hidden rounded-circle"
+            *ngIf="!imgSrc"
+          />
+
+          <img
+            [src]="imgSrc"
+            alt="image"
+            class="w-100 overflow-hidden rounded-circle"
+            *ngIf="imgSrc"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fileInputImage" class="mb-2">Select File</label>
+          <input
+            type="file"
+            class="form-control"
+            id="fileInputImage"
+            accept="image/*"
+            (change)="showPreview($event)"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="FileCaption" class="mb-2">File Caption</label>
+          <input
+            type="text"
+            id="FileCaption"
+            class="form-control"
+            [(ngModel)]="gallary.caption"
+            placeholder="Enter File Name"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="FileCategory" class="mb-2">File Category</label>
+          <div class="ngdropdown">
+            <ng-multiselect-dropdown
+              [placeholder]="'Select Category'"
+              [settings]="dropdownSettings"
+              [data]="categoryList"
+              [(ngModel)]="selectedCategory"
+            >
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="FileDescription" class="mb-2">File Description</label>
+          <textarea
+            id="FileDescription"
+            class="form-control"
+            rows="7"
+            [(ngModel)]="gallary.description"
+            placeholder="Enter File Description"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

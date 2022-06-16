@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Employee } from "./employee.model";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +18,8 @@ export class AddressService {
   }
   getTotalCity() {
     return this.firestore.collection('cities').valueChanges();
+  }
+  getTotalArea() {
+    return this.firestore.collection('areas').valueChanges();
   }
 }

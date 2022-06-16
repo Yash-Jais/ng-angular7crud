@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="fw-bold fs-3 mt-3 col-12 d-flex justify-content-between">
+    Edit City Area
+    <a routerLink="/areas/list-area" class="btn btn-primary rounded-pill">
+      <span class="me2">
+        <i class="fas fa-eye"></i>
+      </span>
+      List Areas
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8 mx-auto my-4">
+    <div class="card shadow">
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="stateDropdown">Select any one state</label>
+          <div class="ngsearch multidropdown" id="stateDropdown">
+            <ng-multiselect-dropdown
+              [placeholder]="'Please Select State'"
+              [settings]="dropdownSettingsStates"
+              [data]="stateList"
+              [(ngModel)]="selectedStates"
+              (onSelect)="modfiedCities($event)"
+            >
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="stateDropdown">Select any one city</label>
+          <div class="ngsearch multidropdown" id="cityDropdown">
+            <ng-multiselect-dropdown
+              [placeholder]="'Please Select City'"
+              [settings]="dropdownSettingsCities"
+              [data]="cityList"
+              [(ngModel)]="selectedCities"
+            >
+            </ng-multiselect-dropdown>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="CityName" class="mb-2"
+            >Enter City Name <span class="valid">*</span></label
+          >
+
+          <input
+            type="text"
+            [(ngModel)]="area.name"
+            placeholder="Enter City"
+            class="form-control"
+            minlength="1"
+            maxlength="50"
+            id="CityName"
+            autocomplete="off"
+          />
+          <!-- <div *ngIf="submitted && !error.title" class="valid">
+            This field is Required
+          </div> -->
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-primary" (click)="updateArea()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

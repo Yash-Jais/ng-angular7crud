@@ -26,6 +26,7 @@ export class DasahboardComponent implements OnInit {
     this.getEmployee();
     this.getState();
     this.getCity();
+    this.getArea();
   }
 
 
@@ -42,7 +43,7 @@ export class DasahboardComponent implements OnInit {
     this.router.navigate(['cities/list-city']);
   }
   goToArea() {
-    this.router.navigate(['cities/list-city']);
+    this.router.navigate(['areas/list-area']);
   }
 
   /************************************
@@ -64,6 +65,11 @@ export class DasahboardComponent implements OnInit {
   getCity() {
     this.addressService.getTotalCity().subscribe((res) => {
       this.totalCities = res.length
+    })
+  }
+  getArea() {
+    this.addressService.getTotalArea().subscribe((res) => {
+      this.totalAreas = res.length
     })
   }
 
