@@ -46,6 +46,8 @@ export class UploadImageComponent implements OnInit {
       Reader.onload = (e: any) => this.imgSrc = e.target.result;
       Reader.readAsDataURL(event.target.files[0]);
       this.selectedImage = event.target.files[0];
+      console.log(this.selectedImage);
+
     } else {
       this.selectedImage = null;
       this.imgSrc = "";
