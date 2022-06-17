@@ -34,6 +34,9 @@ import { CityEditComponent } from './components/city/city-edit/city-edit.compone
 import { CityListComponent } from './components/city/city-list/city-list.component';
 import { AreasComponent } from './components/areas/areas.component';
 import { AreaEditComponent } from './components/areas/area-edit/area-edit.component';
+import { GallaryComponent } from './components/gallary/gallary.component';
+import { UploadImageComponent } from './components/gallary/upload-image/upload-image.component';
+import { ListImagesComponent } from './components/gallary/list-images/list-images.component';
 
 /* Services */
 import { EmployeeService } from './shared/employee.service';
@@ -41,9 +44,7 @@ import { StateService } from './shared/state.service';
 import { CityService } from './shared/city.service';
 import { AddressService } from './shared/address.service';
 import { AreaService } from './shared/area.service';
-import { GallaryComponent } from './components/gallary/gallary.component';
-import { UploadImageComponent } from './components/gallary/upload-image/upload-image.component';
-import { ListImagesComponent } from './components/gallary/list-images/list-images.component';
+import { GallaryService } from './shared/gallary.service';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
@@ -86,7 +87,7 @@ import { ListImagesComponent } from './components/gallary/list-images/list-image
     NgMultiSelectDropDownModule.forRoot()
     // ToastrModule.forRoot()
   ],
-  providers: [EmployeeService, StateService, CityService, AddressService, AreaService],
+  providers: [EmployeeService, StateService, CityService, AddressService, AreaService, GallaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

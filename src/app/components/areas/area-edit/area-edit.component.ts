@@ -92,7 +92,7 @@ export class AreaEditComponent implements OnInit {
       this.area = areaData;
       // this.selectedCities.push(this.area.cityName)
       this.selectedStates.push(this.area.states.name)
-      // debugger
+      debugger
       console.log(this.area);
     })
   }

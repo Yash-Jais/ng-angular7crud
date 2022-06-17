@@ -22,14 +22,14 @@
             src="../../../../assets/img/placeholder-image.png"
             alt="image"
             class="w-100 overflow-hidden rounded-circle"
-            *ngIf="!imgSrc"
+            *ngIf="!gallaryImage"
           />
 
           <img
-            [src]="imgSrc"
+            [src]="gallaryImage"
             alt="image"
             class="w-100 overflow-hidden rounded-circle"
-            *ngIf="imgSrc"
+            *ngIf="gallaryImage"
           />
         </div>
         <div class="mb-3">
@@ -40,6 +40,7 @@
             id="fileInputImage"
             accept="image/*"
             (change)="showPreview($event)"
+            [(ngModel)]="image"
           />
         </div>
         <div class="mb-3">
@@ -73,6 +74,12 @@
             [(ngModel)]="gallary.description"
             placeholder="Enter File Description"
           ></textarea>
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-success me-2" (click)="uploadImage()">
+            Upload
+          </button>
+          <button class="btn btn-danger" (click)="clearData()">CLear</button>
         </div>
       </div>
     </div>
